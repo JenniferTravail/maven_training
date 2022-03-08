@@ -6,24 +6,28 @@ import org.junit.jupiter.api.Test;
 public class SampleTest {
     @Test
     public void result_part_five(){
-        Assertions.assertEquals(Sample.fact(5),120);
+        Sample s_instance = new Sample();
+        Assertions.assertEquals(s_instance.fact(5),120);
     }
 
     @Test
     public void throw_illegal_exception(){
+        Sample s_instance = new Sample();
         IllegalArgumentException exception_t = Assertions.assertThrows(IllegalArgumentException.class,
             () ->
-                Sample.fact(-1)
+                s_instance.fact(-1)
         );
     }
 
     @Test
     public void operation_add(){
-        Assertions.assertEquals(Sample.op(Sample.Operation.ADD, 1,2), 3);
+        Sample s_instance = new Sample();
+        Assertions.assertEquals(s_instance.op(Sample.Operation.ADD, 1,2), 3);
     }
 
     @Test
     public void operation_mult(){
-        Assertions.assertEquals(Sample.op(Sample.Operation.MULT, 5, 5), 25);
+        Sample s_instance = new Sample();
+        Assertions.assertEquals(s_instance.op(Sample.Operation.MULT, 5, 5), 25);
     }
 }
